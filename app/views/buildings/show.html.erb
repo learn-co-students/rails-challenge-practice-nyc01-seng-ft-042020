@@ -1,0 +1,12 @@
+<h1>Building</h1>
+
+<h2>Name: <%= @building.name %></h2>
+
+<h3>Companies:</h3>
+<ol>
+    <% @building.companies.each do |company| %>
+        <li><%= company.name %></li>
+    <% end %>
+</ol>
+
+<h3>Total Rent: $<%= @building.total_rent %></h3>
