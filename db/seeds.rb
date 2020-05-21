@@ -1,3 +1,15 @@
+puts "destroying building"
+Building.destroy_all
+
+puts "destroying office"
+Office.destroy_all
+
+puts "destroying company"
+Company.destroy_all
+
+puts "destroying employee"
+Employee.destroy_all
+
 weworks = [
   {name: "Finsbury Pavement", 
    country: "UK", 
@@ -19,6 +31,8 @@ weworks = [
   }
 ]
 
+puts "creatings building"
+
 weworks.each do |we|
   Building.create(we)
 end
@@ -32,6 +46,8 @@ companies = [
   "Blue Apron",
   "Dog the Bounty Hunter LLC"
 ]
+
+puts "creating companies"
 
 companies.each do |company|
   Company.create(name: company)
@@ -47,6 +63,8 @@ titles = [
   "Instructor"
 ]
 
+puts "creating employees"
+
 100.times do 
   Employee.create(
     name: Faker::Name.name_with_middle,
@@ -54,6 +72,8 @@ titles = [
     company: Company.all.sample
   )
 end
+
+puts "creating buildings"
 
 10.times do 
   random_building = Building.all.sample

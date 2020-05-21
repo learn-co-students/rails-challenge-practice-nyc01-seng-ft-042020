@@ -1,0 +1,18 @@
+<h1>Company</h1>
+
+<h3>Offices:</h3>
+<ol>
+    <% @company.offices.each do |office| %>
+        <li><%= office.building.name %></li>
+    <% end %>
+</ol>
+
+<h5>List of Employees:</h5>
+<ol>
+    <% @company.employees.each do |employee| %>
+        <li><%= employee.name %></li>
+        <%= button_to "Delete", employee_path(employee.id), :method => :delete %>
+    <% end %>
+</ol>
+
+<h5>Total Rent: $ </h5>
